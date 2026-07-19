@@ -1,0 +1,181 @@
+=== inicio
+@art #87d7ff #5f5fff
+      _________________
+     /                 \
+    |   ╔═══════════╗   |
+    |   ║ CRIO-SONO ║   |
+    |   ║  ▓▓▓▓░░░  ║   |
+    |   ║ DESPERTAR ║   |
+    |   ╚═══════════╝   |
+     \_________________/
+        ||         ||
+@text
+O vidro da cápsula de criosono se abre com um silvo.
+
+Você é o único tripulante acordado da estação DERIVA-7.
+As luzes de emergência piscam em vermelho. O silêncio é
+quebrado apenas por um alarme distante... e um barulho
+metálico vindo do refeitório.
+
+O que você faz?
+@choices
+Ir direto à ponte de comando -> ponte
+Investigar o barulho no refeitório -> refeitorio
+
+=== ponte
+@art
+     ┌─────────────────────────┐
+     │  {w}O R I O N   v 4 . 2{c}    │
+     │ ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ │
+     │  REATOR: {r}██░░░░░░{c}  {y}23%{c}  │
+     │  {r}COLAPSO EM: 00:31:07{c}   │
+     └─────────────────────────┘
+        /|\    ___    /|\
+@text
+A ponte de comando está deserta. O computador de bordo,
+ORION, projeta um aviso na tela principal:
+
+"REATOR PRINCIPAL EM FALHA. COLAPSO EM 31 MINUTOS.
+ CÁPSULA DE FUGA DISPONÍVEL NO HANGAR: 1 VAGA."
+
+Você pode tentar reiniciar o reator manualmente —
+arriscado sem ajuda — ou correr para o hangar.
+@choices
+Tentar reiniciar o reator sozinho -> reator_solo
+Correr para o hangar -> hangar
+
+=== refeitorio
+@art
+       {y}___________
+      |  _______  |
+      | |{w}o     o{y}| |     {w}BIP.{y}
+      | |   ▽   | |     {w}BIP.{y}
+      | |_______| |
+      |___________|
+       _|       |_
+      |_|       |_|{c}
+@text
+Entre mesas reviradas, um pequeno robô de manutenção
+tenta alcançar uma lata de óleo na prateleira de cima.
+A plaqueta diz C4-10 — mas alguém riscou e escreveu "CACTO".
+
+"AH! HUMANO ACORDADO! ÓTIMO! PÉSSIMO! O reator vai
+colapsar e eu conheço a sequência de reinício, mas
+meus braços são CURTOS DEMAIS para os terminais!"
+
+O robô estende a garra na sua direção.
+@choices
+Levar o Cacto até a ponte de comando -> ponte_cacto
+Ignorar o robô e correr para o hangar -> hangar
+
+=== ponte_cacto
+@art
+     ┌─────────────────────────┐
+     │  {w}O R I O N   v 4 . 2{c}    │
+     │  REATOR: {r}█░░░░░░░{c}  {y}14%{c}  │
+     │  {r}COLAPSO EM: 00:19:44{c}   │
+     └─────────────────────────┘
+          {y}___
+         |{w}o o{y}|  {w}← "EU AJUDO!"{y}
+         |_▽_|{c}
+@text
+Com o Cacto no seu ombro, você chega à ponte. O painel
+mostra o reator caindo rápido.
+
+"A sequência fica no núcleo! Você digita, eu dito!
+Confia em mim! Eu só errei UMA vez! Foi por isso que
+riscaram meu nome!"
+
+...isso não é exatamente animador. O hangar ainda é
+uma opção.
+@choices
+Descer ao núcleo do reator com o Cacto -> reator_cacto
+Desistir e fugir pelo hangar -> hangar
+
+=== reator_solo
+@art
+        {r}⚠  NÚCLEO DO REATOR  ⚠{c}
+       ╔════════════════════╗
+       ║   {r}▓▓  ▓▓▓▓  ▓▓{c}     ║
+       ║  {y}[1] [7] [3] [9]{c}   ║
+       ║   SEQUÊNCIA: {r}????{c}  ║
+       ╚════════════════════╝
+@text
+O núcleo pulsa em tons alaranjados. O painel pede uma
+sequência de quatro dígitos que você nunca viu na vida.
+
+Você tenta a data de aniversário da estação. Errado.
+Tenta 1-2-3-4. Errado. O painel trava e uma voz
+sintética anuncia, quase entediada:
+
+"SEQUÊNCIA INCORRETA. PROTOCOLO DE COLAPSO ACELERADO."
+
+A última coisa que você pensa é que devia ter
+explorado mais a estação antes de bancar o herói.
+@ending bad
+
+=== reator_cacto
+@art
+       ╔════════════════════╗
+       ║  REATOR: {g}████████{c}  ║
+       ║  {g}ESTÁVEL ✓ 100%{c}    ║
+       ╚════════════════════╝
+            {y}___
+           |{w}^ ^{y}|   {w}"EU DISSE{y}
+           |_▽_|    {w}QUE SABIA!"{y}{c}
+@text
+"20 + 20 + 20 + 7! 67!!!!"
+
+Seus dedos voam pelo painel seguindo os gritos do Cacto.
+O zumbido do núcleo desacelera... estabiliza... e as
+luzes da DERIVA-7 voltam ao normal, uma a uma.
+
+"VIU? Só errei uma vez NA VIDA. Hoje não foi o dia."
+
+Você salvou a estação — e ganhou um amigo de lata.
+Semanas depois, o resgate chega e encontra vocês dois
+jogando dama com parafusos no refeitório.
+@ending good
+
+=== hangar
+@art
+        ____/-\____
+       |    | |    |
+       |  {g}CÁPSULA{c}  |      {m}miau?{c}
+       |  {g}DE FUGA{c}  |       {m}/\_/\{c}
+       |____|_|____|      {m}( {y}o.o{m} ){c}
+          /     \          {m}> ^ <{c}
+@text
+O hangar está intacto. A cápsula de fuga aguarda,
+escotilha aberta — e em cima do painel de navegação,
+um gato laranja te encara como se VOCÊ fosse o intruso.
+
+A coleira diz "BUG — mascote da DERIVA-7".
+
+O relógio corre. A cápsula tem uma vaga... mas gato
+não conta como tripulante, certo?
+@choices
+Entrar na cápsula com o Bug e ejetar -> fuga
+Voltar e tentar salvar a estação no reator -> reator_solo
+
+=== fuga
+@art #5fd7ff #ff5fd7
+                  *  .    *
+        .    *          .
+           ___
+          /   \=====>        .
+          \___/   DERIVA-7
+       *        .        *
+            .       *
+@text
+A cápsula ejeta no instante em que os alarmes chegam
+ao máximo. Pela janela, você vê a DERIVA-7 encolher
+até virar um ponto entre as estrelas.
+
+O Bug se enrosca no seu colo e começa a ronronar,
+completamente indiferente à situação.
+
+Três dias depois, um cargueiro capta seu sinal.
+Você sobreviveu — e o Bug ganhou fama intergaláctica
+como "o gato que dormiu durante o próprio resgate".
+@ending good

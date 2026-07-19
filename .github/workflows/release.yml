@@ -1,0 +1,59 @@
+name: Release
+
+# Cria a release com binários ao empurrar uma tag: git tag v0.1.0 && git push --tags
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    strategy:
+      matrix:
+        include:
+          - os: ubuntu-latest
+            target: x86_64-unknown-linux-gnu
+            ext: ""
+          - os: macos-latest
+            target: aarch64-apple-darwin
+            ext: ""
+          - os: macos-latest
+            target: x86_64-apple-darwin
+            ext: ""
+          - os: windows-latest
+            target: x86_64-pc-windows-msvc
+            ext: ".exe"
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - run: rustup target add ${{ matrix.target }}
+      - run: cargo build --release --target ${{ matrix.target }}
+      - name: Package
+        shell: bash
+        run: |
+          BIN=target/${{ matrix.target }}/release/deriva${{ matrix.ext }}
+          NAME=deriva-${{ github.ref_name }}-${{ matrix.target }}
+          mkdir "$NAME"
+          cp "$BIN" LICENSE README.md "$NAME"/
+          if [ "${{ matrix.os }}" = "windows-latest" ]; then
+            7z a "$NAME.zip" "$NAME"
+          else
+            tar czf "$NAME.tar.gz" "$NAME"
+          fi
+      - uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            deriva-*.tar.gz
+            deriva-*.zip
+
+  deb:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: cargo install cargo-deb
+      - run: cargo deb
+      - uses: softprops/action-gh-release@v2
+        with:
+          files: target/debian/*.deb

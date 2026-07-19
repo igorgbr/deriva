@@ -1,0 +1,27 @@
+[package]
+name = "deriva"
+version = "0.1.0"
+edition = "2021"
+description = "Novel game de terminal — ficção interativa com ASCII art, cores e escolhas"
+license = "MIT"
+repository = "https://github.com/igorgiamoniano/deriva"
+readme = "README.md"
+keywords = ["game", "interactive-fiction", "tui", "terminal", "text-adventure"]
+categories = ["games", "command-line-utilities"]
+
+# cargo-deb: `cargo install cargo-deb && cargo deb` gera o .deb
+[package.metadata.deb]
+section = "games"
+extended-description = "Ficção interativa no terminal com ASCII art, cores truecolor e histórias em .txt que qualquer pessoa pode escrever."
+
+[features]
+# som é opt-in: assim `cargo install deriva` compila em qualquer máquina,
+# sem exigir headers do ALSA no Linux. Sem a feature, os sons viram BEL.
+default = []
+sound = ["dep:rodio"]
+
+[dependencies]
+# default-features = false: só precisamos de ondas senoidais, não de decoders mp3/ogg
+rodio = { version = "0.20", default-features = false, optional = true }
+# raw mode + mouse reporting portáveis (o que o btop faz na mão)
+crossterm = "0.28"
