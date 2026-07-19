@@ -7,11 +7,11 @@ Checklist na ordem. Os passos 1–3 são feitos uma vez; o 4 a cada versão nova
 ```bash
 # crie o repo vazio em https://github.com/new (nome: deriva, público, sem README)
 cd deriva
-git remote add origin git@github.com:igorgiamoniano/deriva.git
+git remote add origin git@github.com:igorgbr/deriva.git
 git push -u origin main
 ```
 
-Ou com o GitHub CLI: `gh repo create igorgiamoniano/deriva --public --source . --push`
+Ou com o GitHub CLI: `gh repo create igorgbr/deriva --public --source . --push`
 
 ## 2. crates.io (uma vez o login)
 
@@ -32,7 +32,7 @@ Requer conta em https://aur.archlinux.org com chave SSH cadastrada.
 git clone ssh://aur@aur.archlinux.org/deriva.git aur-deriva
 cp packaging/PKGBUILD aur-deriva/
 cd aur-deriva
-# preencha o sha256: curl -L https://github.com/igorgiamoniano/deriva/archive/v0.1.0.tar.gz | sha256sum
+# preencha o sha256: curl -L https://github.com/igorgbr/deriva/archive/v0.1.0.tar.gz | sha256sum
 makepkg --printsrcinfo > .SRCINFO
 git add PKGBUILD .SRCINFO && git commit -m "deriva 0.1.0" && git push
 ```
