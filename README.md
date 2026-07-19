@@ -1,5 +1,7 @@
 # DERIVA
 
+🇧🇷 Português | [🇺🇸 English](README.en.md)
+
 [![CI](https://github.com/igorgbr/deriva/actions/workflows/ci.yml/badge.svg)](https://github.com/igorgbr/deriva/actions/workflows/ci.yml)
 [![crates.io](https://img.shields.io/crates/v/deriva.svg)](https://crates.io/crates/deriva)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
