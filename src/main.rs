@@ -73,7 +73,7 @@ fn parse_story(src: &str) -> HashMap<String, Scene> {
         } else if line.trim().starts_with("@art") {
             section = "art";
             // "@art #RRGGBB #RRGGBB" liga o degradê vertical
-            let mut cols = line.trim().split_whitespace().skip(1).filter_map(hex);
+            let mut cols = line.split_whitespace().skip(1).filter_map(hex);
             if let (Some(a), Some(b)) = (cols.next(), cols.next()) {
                 scene.grad = Some((a, b));
             }
