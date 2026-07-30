@@ -29,6 +29,8 @@ cargo run              # compila em qualquer máquina, sem dependência de siste
 cargo run -- --c64
 ```
 
+![Modo --c64](assets/demo-c64.gif)
+
 Som (tons senoidais via rodio) é **opt-in**, para o `cargo install`
 nunca falhar por falta de headers de áudio. Sem a feature, os efeitos
 viram o BEL do terminal:
