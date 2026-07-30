@@ -2,9 +2,7 @@
 
 [🇧🇷 Português](README.md) | 🇺🇸 English
 
-[![CI](https://github.com/igorgbr/deriva/actions/workflows/ci.yml/badge.svg)](https://github.com/igorgbr/deriva/actions/workflows/ci.yml)
-[![crates.io](https://img.shields.io/crates/v/deriva.svg)](https://crates.io/crates/deriva)
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![CI](https://github.com/igorgbr/deriva/actions/workflows/ci.yml/badge.svg)](https://github.com/igorgbr/deriva/actions/workflows/ci.yml) [![crates.io](https://img.shields.io/crates/v/deriva.svg)](https://crates.io/crates/deriva) [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 A terminal visual novel written in Rust. Colorful ASCII art, truecolor
 gradients, mouse support, and stories anyone can write in a plain .txt file.

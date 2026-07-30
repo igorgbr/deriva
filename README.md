@@ -2,9 +2,7 @@
 
 🇧🇷 Português | [🇺🇸 English](README.en.md)
 
-[![CI](https://github.com/igorgbr/deriva/actions/workflows/ci.yml/badge.svg)](https://github.com/igorgbr/deriva/actions/workflows/ci.yml)
-[![crates.io](https://img.shields.io/crates/v/deriva.svg)](https://crates.io/crates/deriva)
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![CI](https://github.com/igorgbr/deriva/actions/workflows/ci.yml/badge.svg)](https://github.com/igorgbr/deriva/actions/workflows/ci.yml) [![crates.io](https://img.shields.io/crates/v/deriva.svg)](https://crates.io/crates/deriva) [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 Novel game de terminal em Rust. ASCII art colorida, degradês truecolor,
 mouse, e histórias que qualquer pessoa pode escrever num .txt.
