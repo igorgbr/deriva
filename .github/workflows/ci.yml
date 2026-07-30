@@ -3,7 +3,15 @@ name: CI
 on:
   push:
     branches: [main]
+    paths-ignore:
+      - 'assets/**'
+      - '**.md'
+      - 'demo.tape'
   pull_request:
+    paths-ignore:
+      - 'assets/**'
+      - '**.md'
+      - 'demo.tape'
 
 jobs:
   test:
