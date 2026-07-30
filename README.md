@@ -9,6 +9,8 @@
 Novel game de terminal em Rust. ASCII art colorida, degradês truecolor,
 mouse, e histórias que qualquer pessoa pode escrever num .txt.
 
+![Deriva rodando no terminal](assets/demo.gif)
+
 ## Instalar
 
 ```bash
