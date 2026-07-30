@@ -2,7 +2,10 @@
 // Formato da história: assets/story.txt (veja README)
 use crossterm::{
     cursor,
-    event::{self, DisableMouseCapture, EnableMouseCapture, Event, KeyCode, KeyEventKind, KeyModifiers, MouseEventKind},
+    event::{
+        self, DisableMouseCapture, EnableMouseCapture, Event, KeyCode, KeyEventKind, KeyModifiers,
+        MouseEventKind,
+    },
     execute, terminal,
 };
 use std::collections::HashMap;
@@ -116,7 +119,9 @@ fn validate(scenes: &HashMap<String, Scene>) -> Vec<String> {
     }
     for (id, s) in scenes {
         if s.ending.is_none() && s.choices.is_empty() {
-            errs.push(format!("cena '{id}' sem escolhas e sem @ending (beco sem saída)"));
+            errs.push(format!(
+                "cena '{id}' sem escolhas e sem @ending (beco sem saída)"
+            ));
         }
         for (_, target) in &s.choices {
             if !scenes.contains_key(target) {
@@ -157,7 +162,9 @@ struct Audio {
 #[cfg(feature = "sound")]
 impl Audio {
     fn new() -> Self {
-        Audio { out: rodio::OutputStream::try_default().ok() }
+        Audio {
+            out: rodio::OutputStream::try_default().ok(),
+        }
     }
 
     // Toca uma sequência de notas (freq_hz, duração_ms), bloqueando até o fim.
